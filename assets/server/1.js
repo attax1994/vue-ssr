@@ -1,0 +1,2 @@
+exports.ids=[1],exports.modules={8:function(t,e,s){"use strict";s.r(e);var r=function(){var t=this.$createElement;return(this._self._c||t)("div",[this._ssrNode("404!!!")])};r._withStripped=!0;var i={name:"Empty"},a=s(3);var n=Object(a.a)(i,r,[],!1,function(t){},"025a45fa","16f63b13");n.options.__file="src/views/Empty.vue";e.default=n.exports}};
+//# sourceMappingURL=1.js.map
