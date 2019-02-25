@@ -25,7 +25,6 @@ export default (context) => {
             }
           }))
           .then(() => {
-            context.state = store.state
             resolve({app, state: store.state})
           })
           .catch(reject)

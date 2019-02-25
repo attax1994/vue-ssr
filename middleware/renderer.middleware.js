@@ -20,7 +20,7 @@ module.exports = async (ctx, next) => {
                   <script src="//localhost:3000/vendors~main.js"></script>
                   <script src="//localhost:3000/main.js"></script>
                 `
-    , context = {title: url, script, state: ctx.state}
+    , context = {title: url, script, state}
 
   await templateRenderer.renderToString(app, context)
     .then((html) => {
