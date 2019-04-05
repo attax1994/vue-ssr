@@ -37,18 +37,6 @@ router.onReady(() => {
       .catch(next)
   })
 
-  // 初始化每个匹配component的asyncData
-  /*const matched = router.getMatchedComponents(router.currentRoute.path)
-  Promise
-    .all(matched.map((component) => {
-      if (component.asyncData) {
-        return component.asyncData({store, route: router.currentRoute})
-      }
-    }))
-    .then(() => {
-      app.$mount('#app')
-    })
-    .catch(() => app.$mount('#app'))*/
-  app.$mount('#app')
+  app.$mount('#app', true)
 
 })
