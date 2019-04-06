@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "webpack --watch ./ --config ./config/webpack.base.config.js",
-    "start": "nodemon --watch ./",
+    "start": "cross-env NODE_ENV=development nodemon --watch ./",
+    "start-prod": "cross-env NODE_ENV=production nodemon --watch ./",
+    "set-production": "cross-env NODE_ENV=production",
+    "debug": "cross-env NODE_ENV=production node --inspect ./index.js",
     "build-client": "webpack --config ./config/webpack.client.config.js",
-    "build-server": "webpack --config ./config/webpack.server.config.js"
+    "build-server": "webpack --config ./config/webpack.server.config.js",
+    "build-dev": "cross-env NODE_ENV=DEBUG yarn build-client && yarn build-server",
+    "build-prod": "cross-env NODE_ENV=production  yarn build-client && yarn build-server "
   },
   "keywords": [],
   "author": "",
@@ -26,8 +30,10 @@
     "@babel/preset-env": "^7.3.1",
     "autoprefixer": "^9.5.0",
     "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
     "koa": "^2.7.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
     "postcss": "^7.0.14",

@@ -1,8 +1,10 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const nodeExternals = require('webpack-node-externals')
-const baseConfig = require('./webpack.base.config.js')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
+
+const isProd = process.env.NODE_ENV === 'production'
+const baseConfig = /*isProd ? require('./webpack.prod.config.js') : */require('./webpack.base.config.js')
 
 module.exports = merge(baseConfig, {
   // 将 entry 指向应用程序的 server entry 文件
@@ -19,7 +21,7 @@ module.exports = merge(baseConfig, {
   // 此处告知 server bundle 使用 Node 风格导出模块(Node-style exports)
   output: {
     libraryTarget: 'commonjs2',
-    path: path.resolve(__dirname, '../assets/server'),
+    path: isProd ? path.resolve(__dirname, '../assets/prod/server') : path.resolve(__dirname, '../assets/dev/server'),
   },
 
   // https://webpack.js.org/configuration/externals/#function

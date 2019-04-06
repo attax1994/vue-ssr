@@ -13,6 +13,9 @@
     data() {
       return {message: ''}
     },
+    mounted(){
+      console.log(this)
+    }
   }
 </script>
 
