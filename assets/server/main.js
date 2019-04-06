@@ -1,2 +1,357 @@
-module.exports=function(e){var t={},n={0:0};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}return r.e=function(t){if(0!==n[t]){var r=require("./"+({}[t]||t)+".js"),o=r.modules,u=r.ids;for(var i in o)e[i]=o[i];for(var a=0;a<u.length;a++)n[u[a]]=0}return Promise.all([])},r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r.oe=function(e){process.nextTick(function(){throw e})},r(r.s=5)}([function(e,t){e.exports=require("vue")},function(e,t){e.exports=require("vue-router")},function(e,t){e.exports=require("vuex")},function(e,t,n){"use strict";function r(e,t,n,r,o,u,i,a){var c,s="function"==typeof e?e.options:e;if(t&&(s.render=t,s.staticRenderFns=n,s._compiled=!0),r&&(s.functional=!0),u&&(s._scopeId="data-v-"+u),i?(c=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),o&&o.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(i)},s._ssrRegister=c):o&&(c=a?function(){o.call(this,this.$root.$options.shadowRoot)}:o),c)if(s.functional){s._injectStyles=c;var f=s.render;s.render=function(e,t){return c.call(t),f(e,t)}}else{var p=s.beforeCreate;s.beforeCreate=p?[].concat(p,c):[c]}return{exports:e,options:s}}n.d(t,"a",function(){return r})},function(e,t){e.exports=require("vuex-router-sync")},function(e,t,n){"use strict";n.r(t);var r=n(0),o=n.n(r),u=function(){var e=this.$createElement,t=this._self._c||e;return t("div",{attrs:{id:"app"}},[t("router-view")],1)};u._withStripped=!0;var i={name:"App"},a=n(3);var c=Object(a.a)(i,u,[],!1,function(e){},"7ba5bd90","0f50ec56");c.options.__file="src/App.vue";var s=c.exports,f=n(1),p=n.n(f);o.a.use(p.a);var l=n(2),d=n.n(l);o.a.use(d.a);var v=n(4);function _(){var e=new p.a({mode:"history",routes:[{path:"/",component:function(){return n.e(2).then(n.bind(null,7))},children:[{path:"item/:id",component:function(){return n.e(3).then(n.bind(null,6))}}]},{path:"*",component:function(){return n.e(1).then(n.bind(null,8))}}]}),t=new d.a.Store({state:{},mutations:{},actions:{}});return Object(v.sync)(t,e),{app:new o.a({router:e,store:t,render:function(e){return e(s)}}),router:e,store:t}}t.default=function(e){return new Promise(function(t,n){var r=_(),o=r.app,u=r.router,i=r.store;u.push(e.url),u.onReady(function(){var e=u.getMatchedComponents();if(!e.length)return n({code:404});Promise.all(e.map(function(e){if(e.asyncData)return e.asyncData({store:i,route:u.currentRoute})})).then(function(){t({app:o,state:i.state})}).catch(n)},n)})}}]);
+module.exports = function (t) {
+  var e = {}, n = {0: 0};
+
+  function r(n) {
+    if (e[n]) return e[n].exports;
+    var o = e[n] = {i: n, l: !1, exports: {}};
+    return t[n].call(o.exports, o, o.exports, r), o.l = !0, o.exports
+  }
+
+  return r.e = function (e) {
+    if (0 !== n[e]) {
+      var r = require("./" + ({}[e] || e) + ".js"), o = r.modules, i = r.ids;
+      for (var a in o) t[a] = o[a];
+      for (var s = 0; s < i.length; s++) n[i[s]] = 0
+    }
+    return Promise.all([])
+  }, r.m = t, r.c = e, r.d = function (t, e, n) {
+    r.o(t, e) || Object.defineProperty(t, e, {enumerable: !0, get: n})
+  }, r.r = function (t) {
+    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(t, "__esModule", {value: !0})
+  }, r.t = function (t, e) {
+    if (1 & e && (t = r(t)), 8 & e) return t;
+    if (4 & e && "object" == typeof t && t && t.__esModule) return t;
+    var n = Object.create(null);
+    if (r.r(n), Object.defineProperty(n, "default", {
+      enumerable: !0,
+      value: t,
+    }), 2 & e && "string" != typeof t) for (var o in t) r.d(n, o, function (e) {
+      return t[e]
+    }.bind(null, o));
+    return n
+  }, r.n = function (t) {
+    var e = t && t.__esModule ? function () {
+      return t.default
+    } : function () {
+      return t
+    };
+    return r.d(e, "a", e), e
+  }, r.o = function (t, e) {
+    return Object.prototype.hasOwnProperty.call(t, e)
+  }, r.p = "", r.oe = function (t) {
+    process.nextTick(function () {
+      throw t
+    })
+  }, r(r.s = 11)
+}([function (t, e) {
+  t.exports = require("vue")
+}, function (t, e, n) {
+  var r = n(9);
+  "string" == typeof r && (r = [[t.i, r, ""]]);
+  var o = {hmr: !0, transform: void 0, insertInto: void 0};
+  n(7)(r, o);
+  r.locals && (t.exports = r.locals)
+}, function (t, e) {
+  t.exports = require("vue-router")
+}, function (t, e) {
+  t.exports = require("vuex")
+}, function (t, e, n) {
+  "use strict";
+
+  function r(t, e, n, r, o, i, a, s) {
+    var u, c = "function" == typeof t ? t.options : t;
+    if (e && (c.render = e, c.staticRenderFns = n, c._compiled = !0), r && (c.functional = !0), i && (c._scopeId = "data-v-" + i), a ? (u = function (t) {
+      (t = t || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) || "undefined" == typeof __VUE_SSR_CONTEXT__ || (t = __VUE_SSR_CONTEXT__), o && o.call(this, t), t && t._registeredComponents && t._registeredComponents.add(a)
+    }, c._ssrRegister = u) : o && (u = s ? function () {
+      o.call(this, this.$root.$options.shadowRoot)
+    } : o), u) if (c.functional) {
+      c._injectStyles = u;
+      var f = c.render;
+      c.render = function (t, e) {
+        return u.call(e), f(t, e)
+      }
+    } else {
+      var l = c.beforeCreate;
+      c.beforeCreate = l ? [].concat(l, u) : [u]
+    }
+    return {exports: t, options: c}
+  }
+
+  n.d(e, "a", function () {
+    return r
+  })
+}, function (t, e) {
+  t.exports = require("vuex-router-sync")
+}, function (t, e, n) {
+  "use strict";
+  t.exports = function (t) {
+    var e = [];
+    return e.toString = function () {
+      return this.map(function (e) {
+        var n = function (t, e) {
+          var n = t[1] || "", r = t[3];
+          if (!r) return n;
+          if (e && "function" == typeof btoa) {
+            var o = (a = r, "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(a)))) + " */"),
+              i = r.sources.map(function (t) {
+                return "/*# sourceURL=" + r.sourceRoot + t + " */"
+              });
+            return [n].concat(i).concat([o]).join("\n")
+          }
+          var a;
+          return [n].join("\n")
+        }(e, t);
+        return e[2] ? "@media " + e[2] + "{" + n + "}" : n
+      }).join("")
+    }, e.i = function (t, n) {
+      "string" == typeof t && (t = [[null, t, ""]]);
+      for (var r = {}, o = 0; o < this.length; o++) {
+        var i = this[o][0];
+        null != i && (r[i] = !0)
+      }
+      for (o = 0; o < t.length; o++) {
+        var a = t[o];
+        null != a[0] && r[a[0]] || (n && !a[2] ? a[2] = n : n && (a[2] = "(" + a[2] + ") and (" + n + ")"), e.push(a))
+      }
+    }, e
+  }
+}, function (t, e, n) {
+  var r, o, i = {}, a = (r = function () {
+    return window && document && document.all && !window.atob
+  }, function () {
+    return void 0 === o && (o = r.apply(this, arguments)), o
+  }), s = function (t) {
+    var e = {};
+    return function (t, n) {
+      if ("function" == typeof t) return t();
+      if (void 0 === e[t]) {
+        var r = function (t, e) {
+          return e ? e.querySelector(t) : document.querySelector(t)
+        }.call(this, t, n);
+        if (window.HTMLIFrameElement && r instanceof window.HTMLIFrameElement) try {
+          r = r.contentDocument.head
+        } catch (t) {
+          r = null
+        }
+        e[t] = r
+      }
+      return e[t]
+    }
+  }(), u = null, c = 0, f = [], l = n(10);
+
+  function p(t, e) {
+    for (var n = 0; n < t.length; n++) {
+      var r = t[n], o = i[r.id];
+      if (o) {
+        o.refs++;
+        for (var a = 0; a < o.parts.length; a++) o.parts[a](r.parts[a]);
+        for (; a < r.parts.length; a++) o.parts.push(y(r.parts[a], e))
+      } else {
+        var s = [];
+        for (a = 0; a < r.parts.length; a++) s.push(y(r.parts[a], e));
+        i[r.id] = {id: r.id, refs: 1, parts: s}
+      }
+    }
+  }
+
+  function d(t, e) {
+    for (var n = [], r = {}, o = 0; o < t.length; o++) {
+      var i = t[o], a = e.base ? i[0] + e.base : i[0], s = {css: i[1], media: i[2], sourceMap: i[3]};
+      r[a] ? r[a].parts.push(s) : n.push(r[a] = {id: a, parts: [s]})
+    }
+    return n
+  }
+
+  function v(t, e) {
+    var n = s(t.insertInto);
+    if (!n) throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+    var r = f[f.length - 1];
+    if ("top" === t.insertAt) r ? r.nextSibling ? n.insertBefore(e, r.nextSibling) : n.appendChild(e) : n.insertBefore(e, n.firstChild), f.push(e); else if ("bottom" === t.insertAt) n.appendChild(e); else {
+      if ("object" != typeof t.insertAt || !t.insertAt.before) throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+      var o = s(t.insertAt.before, n);
+      n.insertBefore(e, o)
+    }
+  }
+
+  function h(t) {
+    if (null === t.parentNode) return !1;
+    t.parentNode.removeChild(t);
+    var e = f.indexOf(t);
+    e >= 0 && f.splice(e, 1)
+  }
+
+  function m(t) {
+    var e = document.createElement("style");
+    if (void 0 === t.attrs.type && (t.attrs.type = "text/css"), void 0 === t.attrs.nonce) {
+      var r = function () {
+        0;
+        return n.nc
+      }();
+      r && (t.attrs.nonce = r)
+    }
+    return b(e, t.attrs), v(t, e), e
+  }
+
+  function b(t, e) {
+    Object.keys(e).forEach(function (n) {
+      t.setAttribute(n, e[n])
+    })
+  }
+
+  function y(t, e) {
+    var n, r, o, i;
+    if (e.transform && t.css) {
+      if (!(i = "function" == typeof e.transform ? e.transform(t.css) : e.transform.default(t.css))) return function () {
+      };
+      t.css = i
+    }
+    if (e.singleton) {
+      var a = c++;
+      n = u || (u = m(e)), r = w.bind(null, n, a, !1), o = w.bind(null, n, a, !0)
+    } else t.sourceMap && "function" == typeof URL && "function" == typeof URL.createObjectURL && "function" == typeof URL.revokeObjectURL && "function" == typeof Blob && "function" == typeof btoa ? (n = function (t) {
+      var e = document.createElement("link");
+      return void 0 === t.attrs.type && (t.attrs.type = "text/css"), t.attrs.rel = "stylesheet", b(e, t.attrs), v(t, e), e
+    }(e), r = function (t, e, n) {
+      var r = n.css, o = n.sourceMap, i = void 0 === e.convertToAbsoluteUrls && o;
+      (e.convertToAbsoluteUrls || i) && (r = l(r));
+      o && (r += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(o)))) + " */");
+      var a = new Blob([r], {type: "text/css"}), s = t.href;
+      t.href = URL.createObjectURL(a), s && URL.revokeObjectURL(s)
+    }.bind(null, n, e), o = function () {
+      h(n), n.href && URL.revokeObjectURL(n.href)
+    }) : (n = m(e), r = function (t, e) {
+      var n = e.css, r = e.media;
+      r && t.setAttribute("media", r);
+      if (t.styleSheet) t.styleSheet.cssText = n; else {
+        for (; t.firstChild;) t.removeChild(t.firstChild);
+        t.appendChild(document.createTextNode(n))
+      }
+    }.bind(null, n), o = function () {
+      h(n)
+    });
+    return r(t), function (e) {
+      if (e) {
+        if (e.css === t.css && e.media === t.media && e.sourceMap === t.sourceMap) return;
+        r(t = e)
+      } else o()
+    }
+  }
+
+  t.exports = function (t, e) {
+    if ("undefined" != typeof DEBUG && DEBUG && "object" != typeof document) throw new Error("The style-loader cannot be used in a non-browser environment");
+    (e = e || {}).attrs = "object" == typeof e.attrs ? e.attrs : {}, e.singleton || "boolean" == typeof e.singleton || (e.singleton = a()), e.insertInto || (e.insertInto = "head"), e.insertAt || (e.insertAt = "bottom");
+    var n = d(t, e);
+    return p(n, e), function (t) {
+      for (var r = [], o = 0; o < n.length; o++) {
+        var a = n[o];
+        (s = i[a.id]).refs--, r.push(s)
+      }
+      t && p(d(t, e), e);
+      for (o = 0; o < r.length; o++) {
+        var s;
+        if (0 === (s = r[o]).refs) {
+          for (var u = 0; u < s.parts.length; u++) s.parts[u]();
+          delete i[s.id]
+        }
+      }
+    }
+  };
+  var g, _ = (g = [], function (t, e) {
+    return g[t] = e, g.filter(Boolean).join("\n")
+  });
+
+  function w(t, e, n, r) {
+    var o = n ? "" : r.css;
+    if (t.styleSheet) t.styleSheet.cssText = _(e, o); else {
+      var i = document.createTextNode(o), a = t.childNodes;
+      a[e] && t.removeChild(a[e]), a.length ? t.insertBefore(i, a[e]) : t.appendChild(i)
+    }
+  }
+}, function (t, e, n) {
+  "use strict";
+  n.r(e);
+  var r = n(1), o = n.n(r);
+  for (var i in r) "default" !== i && function (t) {
+    n.d(e, t, function () {
+      return r[t]
+    })
+  }(i);
+  e.default = o.a
+}, function (t, e, n) {
+  (t.exports = n(6)(!1)).push([t.i, "* {\n  margin: 0;\n  padding: 0;\n}\nhtml, body, #app {\n  width: 100%;\n  height: 100%;\n}\n", ""])
+}, function (t, e) {
+  t.exports = function (t) {
+    var e = "undefined" != typeof window && window.location;
+    if (!e) throw new Error("fixUrls requires window.location");
+    if (!t || "string" != typeof t) return t;
+    var n = e.protocol + "//" + e.host, r = n + e.pathname.replace(/\/[^\/]*$/, "/");
+    return t.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function (t, e) {
+      var o, i = e.trim().replace(/^"(.*)"$/, function (t, e) {
+        return e
+      }).replace(/^'(.*)'$/, function (t, e) {
+        return e
+      });
+      return /^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(i) ? t : (o = 0 === i.indexOf("//") ? i : 0 === i.indexOf("/") ? n + i : r + i.replace(/^\.\//, ""), "url(" + JSON.stringify(o) + ")")
+    })
+  }
+}, function (t, e, n) {
+  "use strict";
+  n.r(e);
+  var r = n(0), o = n.n(r), i = function () {
+    var t = this.$createElement, e = this._self._c || t;
+    return e("div", {attrs: {id: "app"}}, [e("router-view")], 1)
+  };
+  i._withStripped = !0;
+  var a = {name: "App"}, s = n(4);
+  var u = Object(s.a)(a, i, [], !1, function (t) {
+    var e = n(8);
+    e.__inject__ && e.__inject__(t)
+  }, null, "0f50ec56");
+  u.options.__file = "src/App.vue";
+  var c = u.exports, f = n(2), l = n.n(f);
+  o.a.use(l.a);
+  var p = n(3), d = n.n(p);
+  o.a.use(d.a);
+  var v = n(5);
+
+  function h() {
+    var t = new l.a({
+      mode: "history", routes: [{
+        path: "/", component: function () {
+          return n.e(1).then(n.bind(null, 16))
+        }, children: [{
+          path: "item/:id", component: function () {
+            return n.e(3).then(n.bind(null, 15))
+          },
+        }],
+      }, {
+        path: "*", component: function () {
+          return n.e(2).then(n.bind(null, 17))
+        },
+      }],
+    }), e = new d.a.Store({state: {}, mutations: {}, actions: {}});
+    return Object(v.sync)(e, t), {
+      app: new o.a({
+        router: t, store: e, render: function (t) {
+          return t(c)
+        },
+      }), router: t, store: e,
+    }
+  }
+
+  e.default = function (t) {
+    return new Promise(function (e, n) {
+      var r = h(), o = r.app, i = r.router, a = r.store;
+      i.push(t.url), i.onReady(function () {
+        var t = i.getMatchedComponents();
+        if (!t.length) return n({code: 404});
+        Promise.all(t.map(function (t) {
+          if (t.asyncData) return t.asyncData({store: a, route: i.currentRoute})
+        })).then(function () {
+          e({app: o, state: a.state})
+        }).catch(n)
+      }, n)
+    })
+  }
+}]);
 //# sourceMappingURL=main.js.map

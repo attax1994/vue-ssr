@@ -1,5 +1,6 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -25,15 +26,23 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: [
+                require('autoprefixer'),
+              ],
+            },
+          },
           'sass-loader',
         ],
       },
       {
         test: /\.vue$/,
-        use: [
-          'vue-loader',
-        ],
+        loader: 'vue-loader',
+        options: {
+          extractCSS: isProduction,
+        },
       },
     ],
   },
