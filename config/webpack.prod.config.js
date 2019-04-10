@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 module.exports = merge(baseConfig, {
   mode: 'production',
 
-  module: {
+  /*module: {
     rules: [
       {
         test: /\.s?[ca]ss$/,
@@ -36,20 +36,20 @@ module.exports = merge(baseConfig, {
         ],
       },
     ],
-  },
+  },*/
 
   // 将vue的版本更换为生产环境版本
-  resolve: {
+  /*resolve: {
     alias: {
       vue: 'vue/dist/vue.min.js',
     },
     extensions: ['.js', '.vue'],
-  },
+  },*/
 
-  plugins: [
-    new MiniCssExtractPlugin({
+  /*plugins: [
+    new MiniCssExtractPlugin({/!**!/
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
     }),
-  ],
+  ],*/
 })
