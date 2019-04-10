@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 const Vue = require('vue')
-const {createRenderer, createBundleRenderer} = require('vue-server-renderer/build.dev')
+const {createRenderer, createBundleRenderer} = require('vue-server-renderer')
 const template = fs.readFileSync(path.resolve(__dirname, '../src/index.template.html'), 'utf-8')
 // templateRenderer
 const templateRenderer = createRenderer({template})

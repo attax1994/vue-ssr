@@ -3,5 +3,5 @@ assets
 .DS_Store
 .idea
 .vscode
-yarn.lock
-yarn-error.log
+/yarn.lock
+/yarn-error.log

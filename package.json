@@ -6,12 +6,11 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development nodemon --watch ./",
     "start-prod": "cross-env NODE_ENV=production nodemon --watch ./",
-    "set-production": "cross-env NODE_ENV=production",
-    "debug": "cross-env NODE_ENV=production node --inspect ./index.js",
     "build-client": "webpack --config ./config/webpack.client.config.js",
     "build-server": "webpack --config ./config/webpack.server.config.js",
-    "build-dev": "cross-env NODE_ENV=DEBUG yarn build-client && yarn build-server",
-    "build-prod": "cross-env NODE_ENV=production  yarn build-client && yarn build-server "
+    "build-dev": "cross-env NODE_ENV=development yarn build-client && cross-env NODE_ENV=development yarn build-server",
+    "build-prod": "cross-env NODE_ENV=production yarn build-client && cross-env NODE_ENV=production yarn build-server ",
+    "build": "yarn build-dev && yarn build-prod"
   },
   "keywords": [],
   "author": "",
