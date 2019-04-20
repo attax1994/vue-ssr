@@ -1,10 +1,8 @@
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base.config')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-const config = merge(baseConfig, {
-  mode: 'production',
-
+module.exports = merge(baseConfig, {
+  mode: 'development',
   module: {
     rules: [
       {
@@ -18,7 +16,7 @@ const config = merge(baseConfig, {
         test: /\.s?[ca]ss$/,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'vue-style-loader',
           'css-loader',
           {
             loader: "postcss-loader",
@@ -33,32 +31,8 @@ const config = merge(baseConfig, {
       },
       {
         test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              extractCSS: true,
-            },
-          },
-        ],
+        use: 'vue-loader',
       },
     ],
   },
-
-  // 将vue的版本更换为生产环境版本
-  /*resolve: {
-    alias: {
-      vue: 'vue/dist/vue.min.js',
-    },
-    extensions: ['.js', '.vue'],
-  },*/
-
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
 })
-
-module.exports = config

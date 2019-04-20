@@ -4,7 +4,7 @@ const nodeExternals = require('webpack-node-externals')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
-const baseConfig = /*isProd ? require('./webpack.prod.config.js') : */require('./webpack.base.config.js')
+const baseConfig = /*isProd ? require('./webpack.prod.config.js') :*/ require('./webpack.dev.config.js')
 
 module.exports = merge(baseConfig, {
   // 将 entry 指向应用程序的 server entry 文件
